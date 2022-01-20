@@ -34,7 +34,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      realese: {
+      release: {
         type: Sequelize.STRING,
         allowNull: false
       },

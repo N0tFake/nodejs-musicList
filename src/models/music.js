@@ -1,15 +1,15 @@
 const { Model, DataTypes } = require('sequelize')
 
-class Artist extends Model {
+class Music extends Model {
     static init(sequelize){
         super.init({
             name: DataTypes.STRING,
-            date_origin: DataTypes.STRING
+            release: DataTypes.STRING
         },{
             sequelize,
-            tableName: 'artists'
+            tableName: 'musics'
         })
     }
 }
 
-module.exports = Artist
+module.exports = Music
