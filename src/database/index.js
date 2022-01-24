@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize')
 const dbConfig = require('../config/database')
 // Importando Modelos
-const Artist = require('../models/artist')
-const Genre = require('../models/genre')
-const Album = require('../models/album')
-const Music = require('../models/music')
-const { user } = require('pg/lib/defaults')
+const Artist = require('../models/Artist')
+const Genre = require('../models/Genre')
+const Album = require('../models/Album')
+const Music = require('../models/Music')
 //
+
 const connection = new Sequelize(dbConfig)
 
 // Iniciando os modelos
@@ -17,5 +17,6 @@ Music.init(connection)
 //
 
 // Iniciando associações
-
+//Album.associate(connection.models)
+//
 module.exports = connection
