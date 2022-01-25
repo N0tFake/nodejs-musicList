@@ -10,6 +10,10 @@ class Artist extends Model {
             tableName: 'artists'
         })
     }
+
+    static associate(models){
+        this.belongsToMany(models.Album, { foreignKey: 'id_artist', through: 'artist_album', as: 'album'})
+    }
 }
 
 module.exports = Artist

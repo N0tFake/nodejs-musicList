@@ -14,8 +14,14 @@ class Album extends Model {
     }
 
     static associate(models){
-        this.belongsTo(models.Artist, { foreignKey: 'id_artist', as: 'artist' })
-        this.belongsTo(models.Genre, { foreignKey: 'id_genre', as: 'genre'})
+        /* this.belongsTo(models.Artist, { foreignKey: 'id_artist', as: 'artist' })
+        this.belongsTo(models.Genre, { foreignKey: 'id_genre', as: 'genre'}) */
+
+        /* this.hasOne(models.Artist, { foreignKey: 'id_artist', as: 'artist' })
+        this.hasOne(models.Artist, { foreignKey: 'id_genre', as: 'genre' }) */
+
+        this.belongsToMany(models.Artist, { foreignKey: 'id_album', through: 'artist_album', as: 'artista' })
+        this.belongsToMany(models.Genre, { foreignKey: 'id_album',  through: 'genre_associate', as: 'genre'})
     }
 
 }

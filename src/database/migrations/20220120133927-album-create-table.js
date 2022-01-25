@@ -9,13 +9,6 @@ module.exports = {
         autoIncrement: true,
         allowNull: false
       },
-      id_artist: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model:'artists', key:'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE' 
-      },
       name: {
         type: Sequelize.STRING,
         allowNull: false
@@ -23,13 +16,6 @@ module.exports = {
       release: {
         type: Sequelize.STRING,
         allowNull: false
-      },
-      id_genre: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model:'genre_musical', key:'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
       },
       created_at: {
         type: Sequelize.DATE,

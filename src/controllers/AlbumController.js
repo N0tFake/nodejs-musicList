@@ -12,8 +12,6 @@ module.exports = {
         const { id_artist } = req.params 
         const { name, release, genre } = req.body
 
-        console.log(id_artist)
-
         const artist = await Artist.findByPk(id_artist)
         if(!artist) return res.status(400).json({error: "Artist not found!!"})
 
@@ -28,9 +26,10 @@ module.exports = {
         const album = await Album.create({
             name,
             release,
-            id_genre,
-            id_artist
         })
+
+        await artist.addAlbum(album)
+        await genre_music.addGenre(album)
 
         return res.json(album)
 

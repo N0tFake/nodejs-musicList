@@ -17,6 +17,8 @@ Music.init(connection)
 //
 
 // Iniciando associações
-//Album.associate(connection.models)
+Artist.associate(connection.models)
+Album.associate(connection.models)
+Genre.associate(connection.models)
 //
 module.exports = connection
