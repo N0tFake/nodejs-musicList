@@ -19,9 +19,7 @@ module.exports = {
             where: { name: genre },
         })
 
-        if(!created && ! genre_music) return res.status(400).json({error: "Genre not created!!"})
-
-        const id_genre = genre_music.id
+        if(!created && !genre_music) return res.status(400).json({error: "Genre not created!!"})
 
         const album = await Album.create({
             name,

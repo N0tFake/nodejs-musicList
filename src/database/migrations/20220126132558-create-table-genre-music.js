@@ -2,24 +2,17 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /* await queryInterface.createTable('musics', { 
+    await queryInterface.createTable('genre_music', { 
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
       },
-      id_artist: {
+      id_music: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model:'artists', key:'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      },
-      id_album: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model:'albuns', key:'id' },
+        references: { model:'musics', key:'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
@@ -30,14 +23,6 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      release: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false
@@ -46,10 +31,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       }
-    }); */
+    });
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('musics');
+    await queryInterface.dropTable('genre_music');
   }
 };

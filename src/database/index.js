@@ -20,5 +20,7 @@ Music.init(connection)
 Artist.associate(connection.models)
 Album.associate(connection.models)
 Genre.associate(connection.models)
+Music.associate(connection.models)
 //
+
 module.exports = connection

@@ -22,6 +22,7 @@ class Album extends Model {
 
         this.belongsToMany(models.Artist, { foreignKey: 'id_album', through: 'artist_album', as: 'artista' })
         this.belongsToMany(models.Genre, { foreignKey: 'id_album',  through: 'genre_associate', as: 'genre'})
+        this.belongsToMany(models.Music, { foreignKey: 'id_album', through: 'album_music', as: 'MusicAlbum' })
     }
 
 }
